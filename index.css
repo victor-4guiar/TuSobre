@@ -22,6 +22,32 @@ header{
 	justify-content: space-between;
 	background-color: #444;
 	color: #ccc;
+	min-height: 50px;
+}
+
+header h1{
+	margin-left: .5em;
+	cursor: pointer;
+}
+
+nav a{
+	margin: 2px;
+	margin-left: 2px;
+	text-decoration: none;
+	color: #333;
+	background-color: #888;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+nav{
+	margin-right: .5em;
+}
+
+nav .inhere{
+	background-color: #ccc;
+	color: #444;
 }
 
 main{
@@ -38,6 +64,92 @@ section{
 	padding: 10px;
 	border-radius: 0px 0px 8px 8px;
 	margin: auto;
+}
+
+section p, label{
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+}
+
+label{
+	color: #444;
+}
+
+div#nick{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+input#nombre{
+	background-color: #222;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	color: #888;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: .5em;
+	text-align: center;
+}
+
+form#form section h1{
+	margin-bottom: .5em;
+	font-size: 2em;
+	color: #222;
+}
+
+div#align{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+div#align label{
+	margin-right: .5em;
+	margin-left: .1em;
+}
+
+div#gender p{
+	margin-bottom: .5em;
+}
+
+input[type="radio"] {
+	appearance: none;
+	background-color: #eee;
+	margin: 0;
+	color: #888;
+	width: 15px;
+	height: 15px;
+	border: 2px solid #444;
+	border-radius: 50%;
+}
+
+input[type="radio"]:checked{
+	background-color: #444;
+}
+
+input#hecho{
+	padding: 5px 10px;
+	border-radius: 8px;
+	border: none;
+	background-color: #444;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+input#hecho:hover{
+	background-color: #555;
+	color: #ddd;
+}
+
+input#hecho:active{
+	background-color: #222;
+	color: #ccc;
 }
 
 footer{
@@ -61,16 +173,4 @@ footer p a{
 
 footer p a:hover{
 	text-decoration: underline;
-}
-
-div#nick{
-	margin-bottom: 1em;
-}
-
-form#form section h1{
-	margin-bottom: 1em;
-}
-
-div#gender{
-	margin-bottom: 1em;
 }
