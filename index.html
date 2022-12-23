@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE-edge">
-		<link rel="stylesheet" href="index.css">
-		<title>TuSobre - Crear</title>
+		<link rel="stylesheet" href="data/styles/index.css">
+		<title>TuSobre - Home</title>
 	</head>
-	<body>
-		<header>
+	<header>
+		<h1>TuSobre</h1>
+		<nav>
+			<a href="#" rel="next" target="_self">Home</a>
+			<a href="data/pages/cuenta.html" rel="next" target="_self">Cuenta</a>
+			<a href="#" rel="next" target="_self">Creditos</a>
+		</nav>
+	</header>
+	<main>
+		<section>
 			<h1>TuSobre</h1>
-			<nav>
-				<a href="#" rel="next" target="_self">Home</a>
-				<a href="#" rel="next" target="_self" class="inhere">Crear</a>
-				<a href="#" rel="next" target="_self">Creditos</a>
-			</nav>
-		</header>
-		<main>
-			<form id="form" class="form">
-				<section>
-					<h1>Crear tu perfil</h1>
-					<div id="nick">
-						<p>¿Cómo podremos llamarte?</p>
-						<input type="text" id="nombre" maxlength="18" placeholder="Llamame de...">
-					</div>
-					<div id="gender">
-						<p>¿Cual identificas?</p>
-						<div id="align">
-							<input type="radio" name="gen" id="machoice">
-							<label for="machoice">hombre</label>
-							<input type="radio" name="gen" id="fechoice">
-							<label for="fechoice">mujer</label>
-							<input type="radio" name="gen" id="ochoice">
-							<label for="ochoice">otro</label>
-						</div>
-					</div>
-					<input type="button" name="hecho" id="hecho" value="Hecho">
-				</section>
-			</form>
-		</main>
-		<footer>
-			<p>Made by <strong><a href="#" rel="external" target="_blank">Victor Aguiar</a></strong></p>
-		</footer>
-	</body>
+			<div>
+				<p><strong>TuSobre</strong> es una rede social ficticia para pratica, entonces espero que no le espere mucho de esto. Gracias por la atención!</p>
+				<p>Otra cosa a resaltar es que esto sitio estás sendo escrivido por un no españo-nativo-hablante, solo escrive en Español por pratica y tambén por ser mas hablado que su idioma nativo.</p>
+				<p>Si quieres ayurar de alguna manera, puedes acompañar mi cuenta en GitHub. Siempre dejo el link en final de mis paginas.</p>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>Made by <strong><a href="#" rel="external" target="_blank">Victor Aguiar</a></strong></p>
+	</footer>
 </html>
