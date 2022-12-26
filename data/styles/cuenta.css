@@ -95,6 +95,10 @@ input#nombre{
 	text-align: center;
 }
 
+input#nombre:focus{
+	outline: none;
+}
+
 form#form section h1{
 	margin-bottom: .5em;
 	font-size: 2em;
@@ -130,6 +134,7 @@ input[type="radio"] {
 
 input[type="radio"]:checked{
 	background-color: #444;
+	outline: none;
 }
 
 input#hecho{
