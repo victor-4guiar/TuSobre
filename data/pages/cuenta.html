@@ -5,9 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE-edge">
 		<link rel="stylesheet" href="../styles/cuenta.css">
+		<script defer src="../scripts/cuenta.js"></script>
 		<title>TuSobre - Cuenta</title>
 	</head>
-	<body>
+	<body onload="load()">
 		<header>
 			<h1>TuSobre</h1>
 			<nav>
@@ -16,28 +17,7 @@
 				<a href="creditos.html" rel="next" target="_self">Creditos</a>
 			</nav>
 		</header>
-		<main>
-			<form id="form" class="form">
-				<section>
-					<h1>Crear tu perfil</h1>
-					<div id="nick">
-						<p>¿Cómo podremos llamarte?</p>
-						<input type="text" id="nombre" maxlength="18" placeholder="Llamame de...">
-					</div>
-					<div id="gender">
-						<p>¿Cual identificas?</p>
-						<div id="align">
-							<input type="radio" name="gen" id="machoice">
-							<label for="machoice">hombre</label>
-							<input type="radio" name="gen" id="fechoice">
-							<label for="fechoice">mujer</label>
-							<input type="radio" name="gen" id="ochoice">
-							<label for="ochoice">otro</label>
-						</div>
-					</div>
-					<input type="button" name="hecho" id="hecho" value="Hecho">
-				</section>
-			</form>
+		<main id="main" class="main">
 		</main>
 		<footer>
 			<p>Made by <strong><a href="#" rel="external" target="_blank">Victor Aguiar</a></strong></p>
