@@ -23,6 +23,7 @@ header{
 	background-color: #444;
 	color: #ccc;
 	min-height: 50px;
+	width: 100vw;
 }
 
 header h1{
