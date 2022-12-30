@@ -49,8 +49,39 @@ function criar(group){
 						<label for="ochoice">otro</label>
 					</div>
 				</div>
-			<input type="button" name="hecho" id="hecho" value="Hecho">
+			<input type="button" name="hecho" id="hecho" value="Hecho" onclick="enviar()">
 		</section>
 	`;
 	document.getElementById('main').appendChild(forma);
+}
+
+function enviar(){
+	let nnombre = document.getElementById('nombre').value;
+	let ngenero = 
+	[
+	document.getElementById('machoice'),
+	document.getElementById('fechoice'),
+	document.getElementById('ochoice')
+	];
+	
+	if(nnombre == false){
+		window.alert('Por favor, defina un nick.');
+	}else{
+		if(ngenero[0].checked){
+			console.log(`${nombre.value}, hombre`);
+			filtrar(ngenero);
+		}else if(ngenero[1].checked){
+			console.log(`${nombre.value}, mujer`);
+			filtrar(ngenero);
+		}else if(ngenero[2].checked){
+			console.log(`${nombre.value}, otro`);
+			filtrar(ngenero);
+		}else{
+			window.alert('Esqueció de configurar el genero.');
+		}
+	}
+}
+
+function filtrar(ngenero){
+	document.getElementById('form').remove();
 }
