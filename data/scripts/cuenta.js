@@ -1,6 +1,6 @@
 let cuenta = { //Setup de la cuenta
 	nombre: localStorage.getItem("lnombre"),
-	descripcion: null,
+	descripcion: localStorage.getItem("ldescripcion"),
 	genero: localStorage.getItem("lgenero"),
 	cadeado: true
 }
@@ -27,7 +27,7 @@ function load(){ //Load de la pagina
 			<h1>Detectamos un(a) usuário(a)!</h1>
 			<h2>${cuenta.nombre}</h2>
 			<p>Qué pretendes hacer?</p>
-			<input type="button" value="logar" id="logar" class="logar" />
+			<button onclick="lograr(menu)" id="lograr" class="lograr">Lograr</button>
 			<button onclick="deletar(menu)" id="deletar" class="deletar">Deletar Cuenta</button>
 		`;
 		document.getElementById('main').appendChild(menu);
@@ -57,6 +57,9 @@ function criar(group){//Pagina de crar la cuenta
 						<label for="ochoice">otro</label>
 					</div>
 				</div>
+				<div id="aboutme">
+					<textarea maxlength="150" id="descripcion" class="descripcion" placeholder="Sobre mi"></textarea>
+				</div>
 			<input type="button" name="hecho" id="hecho" value="Hecho" onclick="enviar()">
 		</section>
 	`;
@@ -65,6 +68,7 @@ function criar(group){//Pagina de crar la cuenta
 
 function enviar(){//Enviar los datos para que pueden ser tratados depues
 	let nnombre = document.getElementById('nombre').value;
+	let ndescripcion = document.getElementById('descripcion').value;
 	let ngenero = 
 	[
 	document.getElementById('machoice'),
@@ -77,26 +81,28 @@ function enviar(){//Enviar los datos para que pueden ser tratados depues
 	}else{
 		if(ngenero[0].checked){
 			ngenero = 'Hombre';
-			filtrar(ngenero, nnombre);
+			filtrar(ngenero, nnombre, ndescripcion);
 		}else if(ngenero[1].checked){
 			ngenero = 'Mujer';
-			filtrar(ngenero, nnombre);
+			filtrar(ngenero, nnombre, ndescripcion);
 		}else if(ngenero[2].checked){
 			ngenero = 'Otro';
-			filtrar(ngenero, nnombre);
+			filtrar(ngenero, nnombre, ndescripcion);
 		}else{
 			window.alert('Esqueció de configurar el genero.');
 		}
 	}
 }
 
-function filtrar(ngenero, nnombre){ //Filtrar los datos(descargalos en su navegador)
+function filtrar(ngenero, nnombre, ndescripcion){ //Filtrar los datos(descargalos en su navegador)
 	document.getElementById('form').remove();
 	cuenta.nombre = nnombre;
+	cuenta.descripcion = ndescripcion;
 	cuenta.genero = ngenero;
 	localStorage.setItem('lnombre', cuenta.nombre);
+	localStorage.setItem('ldescripcion', cuenta.descripcion);
 	localStorage.setItem('lgenero', cuenta.genero);
-	console.log(`${localStorage.getItem("lnombre")}, ${localStorage.getItem("lgenero")}`);
+	console.log(`${localStorage.getItem("lnombre")}, ${localStorage.getItem("lgenero")}, ${localStorage.getItem("ldescripcion")}`);
 	load();
 }
 
@@ -105,7 +111,27 @@ function deletar(group){//Remover los datos(incluso de su navegador)
 	cuenta.cadeado = true;
 	cuenta.nombre = null;
 	cuenta.genero = null;
+	cuenta.descripcion = null;
 	localStorage.removeItem("lnombre");
 	localStorage.removeItem("lgenero");
+	localStorage.removeItem("ldescripcion");
+	load();
+}
+
+function lograr(menu){ //Lograr en la cuenta
+	menu.innerHTML = `
+			<div id="header" class="header">
+				<h1 id="nombre" class="nombre">${cuenta.nombre}</h1>
+			</div>
+			<p id="descripcion" class="descripcion">${cuenta.descripcion}</p>
+			<button onclick="deslograr()" id="deslograr" class="deslograr">Deslograr</button>
+	`;
+	if(cuenta.descripcion == false){
+		document.getElementById('descripcion').remove();
+	}
+}
+
+function deslograr(){
+	menu.remove();
 	load();
 }
