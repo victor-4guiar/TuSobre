@@ -60,7 +60,7 @@ function criar(group){//Pagina de crar la cuenta
 				<div id="aboutme">
 					<textarea maxlength="150" id="descripcion" class="descripcion" placeholder="Sobre mi"></textarea>
 				</div>
-			<input type="button" name="hecho" id="hecho" value="Hecho" onclick="enviar()">
+			<input type="submit" name="hecho" id="hecho" value="Hecho" onclick="enviar()">
 		</section>
 	`;
 	document.getElementById('main').appendChild(forma);
